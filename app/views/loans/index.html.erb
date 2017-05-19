@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Loans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Total</th>
+      <th>Tip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td><%= loan.name %></td>
+        <td><%= loan.total %></td>
+        <td><%= loan.tip %></td>
+        <td><%= link_to 'Show', loan %></td>
+        <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Loan', new_loan_path %>
